@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Regex Bat</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="static/main.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div id="header" class="row">
+                <div id="navigation" class="col-xs-6">
+                    <ul id="main-nav">
+                        <li><a href="/main">Main</a></li>
+                        <li><a href="/tutorials">Tutorials</a></li>
+                        <li><a href="/problems">Problems</a></li>
+                        {% if user %}
+                        <li><a href="/profile">Profile</a></li>
+                        {% endif %}
+                    </ul>
+                    <ul id="help-nav">
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/help">Help</a></li>
+                        <li><a onclick"cheatsheet()">Cheatsheet</a></li>
+                    </ul>
+                </div>
+                <div id="login" class="col-xs-6">
+                    <!-- Put a form in here -->
+                </div>
+            </div>
+            {% block page %}
+            {% endblock page %}
+            <div id="footer" class="row">
+                <div id="footer-text" class="col-xs-6">
+                    <p>Copyright Thomas Manning 2014
+                </div>
+            </div>
+        </div>
+        <!-- JavaScript  -->
+        <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script src="static/live.js"></script>
+        <script src="static/main.js"></script>
+    </body>
+</html>

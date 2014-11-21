@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Regex Bat</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="static/main.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div id="header" class="row">
+                <div class="col-xs-6">
+                    <h1>Regex Bat<br/><h2>learn regular expressions!</h2></h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-4">
+                    <h4 id="problem-name">{{ problem.name }}
+                        <small>
+                            <a href="{{ problem.prev }}"> prev </a>
+                            <a href="{{ problem.next }}"> next </a>
+                        </small>
+                    </h4>
+                </div>
+                <div class="col-xs-6">
+                    <table id="problem-results" class="col-xs-6">
+                        <thead>
+                            <tr>
+                                <th>Test String</th>
+                                <th>Matched</th>
+                                <th>Expected</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for str, match, expected, result in problem.tests %}
+                                <tr>
+                                    <td>{{ str }}</td>
+                                    <td>{{ match }}</td>
+                                    <td>{{ expected }}</td>
+                                    <td>{{ result }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="problem-text" class="col-xs-12">
+                    <p id="problem-description">{{ problem.description }}</p>
+                    <ul id="problem-examples">
+                        {% for example in problem.examples %}
+                            <li> {{ example }} </li>
+                        {% endfor %}
+                    </ul>
+                    <p id="problem-footnote">{{ problem.footnote }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-8 solution">
+                    <form class="form-inline">
+                        <input id="problem-regex" class="form-control" type="text" size="30" placeholder="Regex goes here">
+                        <button id="problem-submit" class="btn btn-default">Go</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-8 solution-results">
+                    <textarea id="problem-results" class="form-control" cols="50" rows=5>
+
+                    </textarea>
+                </div>
+            </div>
+
+        </div>
+        <!-- JavaScript  -->
+        <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script src="static/live.js"></script>
+        <script src="static/main.js"></script>
+    </body>
+</html>

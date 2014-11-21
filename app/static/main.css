@@ -1,0 +1,17 @@
+#problem_num a{
+	margin-left: 12px;
+}
+.problem-text{
+	font-size: 14px;
+}
+.solution{
+	margin-bottom: 1em;
+}
+table{
+    border-collpase: collapse;
+    /* visibility: hidden; */
+}
+table, th, td{
+    border: 1px solid black;
+    text-align: center;
+}
